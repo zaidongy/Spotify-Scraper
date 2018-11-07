@@ -4,8 +4,11 @@
 Spotify Web Scraper crawls through the web interface of Spotify and extracts information for different artists
 
 ## Dependencies
-```cmd
 
+```
+pip install beautifulsoup4
+pip install pymongo
+pip install selenium
 ```
 
 ## Configuration Setup
