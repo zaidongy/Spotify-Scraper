@@ -1,2 +1,5 @@
 sample.html
 config.py
+test.py
+__pycache__/
+debug.log
