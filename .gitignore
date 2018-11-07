@@ -3,3 +3,4 @@ config.py
 test.py
 __pycache__/
 debug.log
+chromedriver.exe

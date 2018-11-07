@@ -1,6 +1,5 @@
 from pymongo import MongoClient
 from bs4 import BeautifulSoup
-from splinter import Browser
 from time import sleep
 from random import randint
 from selenium import webdriver
@@ -19,7 +18,7 @@ logos = db.logo
 # Setup Selenium Chrome Driver
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument("--headless")
-driver = webdriver.Chrome(executable_path=r'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chromedriver.exe', chrome_options=chrome_options)
+driver = webdriver.Chrome(executable_path=r'chromedriver.exe', chrome_options=chrome_options)
 
 
 # Set an initial artist seed, I've used my favorite artist Giuseppe Ottaviani
@@ -39,7 +38,7 @@ def main(startingArtist):
         # artistLinks = list(set(artistLinks + additionalLinks))
         #print(artistLinks)
         
-        #randomly sleep between 2-4 seconds to not abuse the server
+        #randomly sleep between 1-2 seconds to not abuse the server
         sleep(randint(1,2))
 
 # ScrapArtist will handle logic to parse html and collect data for a particular artist
@@ -56,11 +55,8 @@ def scrapArtist(artistLink):
         driver.execute_script("window.scrollTo(0, " + str(scrollPosition) + ");")
         sleep(SCROLL_PAUSE_TIME)
 
-    
+    # Store the page response
     response = driver.find_element_by_class_name('related-artists').get_attribute('innerHTML')
-
-    # print(response)
-    # sleep(50)
     nextLinksToCrawl = []
 
     html_soup = BeautifulSoup(response, 'html.parser')
@@ -71,7 +67,7 @@ def scrapArtist(artistLink):
         artistName = el.find('a', {'class': 'mo-info-name'})['title']
         artistLink = el.find('a', {'class': 'mo-info-name'})['href']
 
-        print(artistName, artistLogo, artistLink)
+        # print(artistName, artistLogo, artistLink)
         # sleep(1)
 
         duplicate = logos.find_one({'logo': artistLogo})
