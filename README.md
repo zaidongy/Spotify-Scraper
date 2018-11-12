@@ -1,10 +1,15 @@
 <img src="assets\spotify_logo.png" alt="Spotify Logo" width="25" height="25"> Spotify Web Scraper
 =======================
 
-Spotify Web Scraper crawls through the web interface of Spotify and extracts information for different artists
+Spotify Web Scraper crawls through the Spotify web interface and extracts artist logo information.
+
+## Technology Stack
+ - [Beautiful Soup](https://pypi.org/project/beautifulsoup4/) - Parse HTML code
+ - [PyMongo](https://api.mongodb.com/python/current/#) - Python MongoDB Driver
+ - [Selenium](https://pypi.org/project/selenium/) - Browser Automation Tool
 
 ## Dependencies
-Install Dependencies with PIP
+Install Dependencies with [pip](https://pypi.org/project/pip/)
 
 ```
 pip install beautifulsoup4
