@@ -41,4 +41,4 @@ Since Spotify webpages are generated dynamically, we need a headless browser to 
 Download and save the <a href="http://chromedriver.chromium.org/downloads">Chrome WebDriver</a> at the root level.
 
 ## Author
-  [Chris Yang](https://chrisyang.io) (EIS Systems Analyst, Cedars-Sinai)
+  [Chris Yang](https://chrisyang.io) (ServiceNow Architect, GlideFast)
